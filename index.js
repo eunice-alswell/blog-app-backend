@@ -13,8 +13,7 @@ const port = process.env.PORT
 //connecting to database
 mongoose.connect(dbLink,{
     useNewUrlParser : true, 
-    UseUnifiedTopology : true,  
-    UseCreateIndex : true
+    useUnifiedTopology:true
 },()=>{
     app.listen(port,()=>{
         console.info('Database is connencted! server also has started!')

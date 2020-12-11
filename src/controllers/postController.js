@@ -1,6 +1,6 @@
 const Post = require('../models/postModel'),
 
-const postCtrl = {}
+postCtrl = {}
 
 // creating a post using post method
 postCtrl.createPost = async(req,res)=>{
@@ -25,18 +25,18 @@ postCtrl.getPost = async(req,res)=>{
     }
 
 }
-
 //getting posts by specific author using get method
 postCtrl.getPostByAuthor = async(req,res)=>{
     try {
         let post = await Post.find({author:req.body.author})
-        post? res.status(200).send({message:"author's blog are available" ,post}):res.status(400).send({message:'no blog with such author name'})
+        post? res.status(200).send({message:'blog is available',post}):res.status(400).send({message:'no blog'})
     }
     catch{
         console.log(error)
     }
 
 }
+
 
 //getting posts by param using get method
 postCtrl.getPostByParam = async(req,res)=>{

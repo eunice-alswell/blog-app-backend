@@ -1,6 +1,4 @@
 const {Router} = require('express')
-const { createPost } = require('../controllers/postController')
-const { create } = require('../models/userModel')
 
 const blogRouter = Router()
 

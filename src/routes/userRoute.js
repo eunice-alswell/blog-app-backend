@@ -11,7 +11,7 @@ userRouter.post('/blog-api/user/signup',createUser);
 userRouter.post('blog-api/user/login',loginUser);
 
 //Route for updating user details
-userRouter.post('blog-api/user/update',updateUser);
+userRouter.put('blog-api/user/update',updateUser);
 
 
 

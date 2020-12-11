@@ -31,11 +31,13 @@ userCtrl.loginUser = async(req,res)=>{
 
 // updating user details using the update method
 
-userCtrl.updateUser = async(req,res)=>{
+userCtrl.updateUser = async (req,res) =>{
+
     const {fullname,email,password} = req.body
 
     try{
-        let user = await user.findOneAndUpdate({_id:req.params._id},{fullname,email,password}),
+       let user = await User.findOneAndupdate({_id: req.params.id},{fullname,email,password})
+        res.status(200).send({message: 'updated successfully',user})
     }
     catch{
         console.log(error)
